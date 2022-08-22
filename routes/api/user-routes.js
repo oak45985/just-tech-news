@@ -55,6 +55,7 @@ router.put('/:id', (req, res) => {
     //expects {username: 'name', email: 'email@email.com', password: 'pw'}
     //if req.body has exact k/value paris to match the model, you can use 'req.body' instead
     User.update(req.body, {
+        individualHooks: true,
         where: {
             id: req.params.id
         }
